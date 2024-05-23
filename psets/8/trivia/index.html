@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        function checkAnswerOne(answer) {
+            const button = document.getElementById(answer)
+            const answerPara = document.getElementById('answerOne')
+
+            if (answer === 'cpp') {
+                button.style.backgroundColor = 'green';
+                answerPara.innerText = 'Correct!'
+            } else {
+                button.style.backgroundColor = 'red';
+                answerPara.innerText = 'Incorrect!'
+            }
+        }
+
+        function checkAnswerTwo() {
+            const answerText = document.getElementById('answerTwo')
+            const answerInput = document.getElementById('answerInput')
+
+            if (answerInput.value === 'Neil Armstrong') {
+                answerInput.style.backgroundColor = 'green';
+                answerText.innerText = 'Correct!'
+            } else {
+                answerInput.style.backgroundColor = 'red';
+                answerText.innerText = 'Incorrect!'
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <p id="answerOne"></p>
+            <hr>
+            <h3>Which programming language is mainly used for videogames development in Unreal Engine?</h3>
+            <div>
+                <button id="c" onclick="checkAnswerOne('c')">C</button>
+                <button id="java" onclick="checkAnswerOne('java')">Java</button>
+                <button id="rust" onclick="checkAnswerOne('rust')">Rust</button>
+                <button id="cpp" onclick="checkAnswerOne('cpp')">C++</button>
+                <button id="html" onclick="checkAnswerOne('html')">HTML</button>
+                <button id="assembly" onclick="checkAnswerOne('assembly')">Assembly</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <p id="answerTwo"></p>
+            <hr>
+            <h3>Who was the first human to land on the moon?</h3>
+            <input id="answerInput" type="text" />
+            <button onclick="checkAnswerTwo()">Check Answer</button>
+        </div>
+    </div>
+</body>
+
+</html>
